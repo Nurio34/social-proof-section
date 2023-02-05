@@ -1,0 +1,162 @@
+
+@import 'reset';
+@import 'mixin';
+@import 'conf';
+
+body{
+    @include text ($clr-300,$clr-500, $ff-1,$fs-15,$fw-4,$algn-cntr);
+    min-height: 100vh;
+    @media (min-width:1000px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    } 
+
+    main{
+        padding-block:4rem 0rem;
+        padding-inline: 1.16rem;
+        @media (min-width:1000px) {
+            width: 80%;
+        } 
+
+        section{
+            @media (min-width:1000px) {
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+            }            
+
+            article{
+                border:none;
+
+                h1{
+                    font-size: 2rem;
+                    line-height: 1.7rem;
+                    color:$clr-100;
+                    font-weight: $fw-9;
+
+                    @media (min-width:1000px) {
+                        text-align: start;
+                        padding-inline-end: 12.4rem;
+                    }   
+                }
+
+                p{
+                    padding-block: 1rem 2rem;
+                    font-weight: $fw-7;
+
+                    @media (min-width:1000px) {
+                        text-align: start;
+                        padding-inline-end: 6.8rem;
+                        padding-block-start: 2rem;
+                    }
+                }
+            }
+
+            aside{          
+                @media (min-width:1000px) {
+                    .box:nth-of-type(1){
+                        margin-inline:0 6rem;
+                    }
+                    .box:nth-of-type(2){
+                        margin-inline: 3rem 3rem;
+                    }
+                    .box:nth-of-type(3){
+                        margin-inline: 6rem 0;
+                    }
+                }
+
+                .box{
+                    background-color: $clr-400;
+                    border-radius: 1rem;
+                    padding-block: 1rem;
+                    margin-block: 1rem;
+                    color:$clr-100;
+                    font-weight: $fw-7;
+
+                    @media (min-width:1000px) {
+                        display:flex;
+                        padding-inline-start: 3rem;
+                        gap:3rem;
+                    }  
+                }
+            }
+        }
+
+        footer{
+            padding-block: 2rem;
+            @media (min-width:1000px) {
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                gap:1rem;
+
+                blockquote:nth-of-type(1){
+                    margin-block: 0 4rem;
+                }
+                blockquote:nth-of-type(2){
+                    margin-block: 2rem 2rem;
+                }
+                blockquote:nth-of-type(3){
+                    margin-block: 4rem 0;
+                }
+            } 
+
+            blockquote{
+                background-color: $clr-100;
+                color: $clr-500;
+                padding-block: 2rem;
+                padding-inline: 2.09rem;
+                text-align: start;
+                margin-block: 1rem;
+                border-radius: 1rem;
+                
+                img{
+                    float: left;
+                    border-radius: 50%;
+                    width: min(25%,67.5px);
+                }
+
+                p:nth-of-type(1){
+                    font-weight: $fw-7;
+                    padding-inline-start: 5rem;
+                }
+
+                p:nth-of-type(2){
+                    padding-inline-start: 5rem;
+                    color:$clr-200;
+                }
+
+                p:nth-of-type(3){
+                    padding-block-start: 2rem;
+                }
+            }
+        }
+    }
+
+    .pattern-top{
+        position: absolute;
+        top:-2%;
+        left:0%;
+    }
+
+    .pattern-bottom{
+        position: absolute;
+        display: none;
+        @media (min-width:1000px) {
+            display:block;
+            right:0;
+            bottom: 0%;
+            width:87%;
+        } 
+        
+    }
+
+    .outro{
+        margin-block-end: 4rem;
+
+        a{
+            display:inline;
+        }
+    }
+}
